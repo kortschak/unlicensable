@@ -18,7 +18,7 @@ import (
 
 func main() {
 	if len(os.Args) != 2 {
-		fmt.Fprintf(os.Stderr, "Usage: %s <path>", os.Args[0])
+		log.Fatalf("Usage: %s <path>", os.Args[0])
 	}
 	files, err := licenses(os.Args[1])
 	if err != nil {
