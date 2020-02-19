@@ -39,7 +39,7 @@ func licenses(path string) ([]license, error) {
 			return nil
 		}
 		if info.IsDir() {
-			if strings.HasPrefix(info.Name(), ".") {
+			if name := info.Name(); name != "." && strings.HasPrefix(name, ".") {
 				return filepath.SkipDir
 			}
 			return nil
